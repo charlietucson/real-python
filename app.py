@@ -16,6 +16,24 @@ def index():
 def hello_world():
 	return "Hello World!"
 
+# dynamic route
+@app.route("/test/<search_query>")
+def search(search_query):
+	return search_query
+
+# Flask converters
+@app.route("/integer/<int:value>")
+def int_type(value):
+	print(value + 1)
+	return "correct"
+
+@app.route("/float/<float:value>")
+def float_type(value):
+	print(value+1)
+	return "correct"
+
+## pagina 63 ##########
+
 # start the development server using the run() method
 if __name__ == '__main__':
 	app.run()
